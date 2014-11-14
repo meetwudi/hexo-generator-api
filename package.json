@@ -1,0 +1,28 @@
+{
+  "name": "hexo-generator-api",
+  "version": "0.1.0",
+  "description": "Generate JSON api for your awesome hexo site",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/tjwudi/hexo-generator-api"
+  },
+  "keywords": [
+    "hexo",
+    "api",
+    "json"
+  ],
+  "author": "John Wu <webmaster@leapoahead.com> (https://github.com/tjwudi)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjwudi/hexo-generator-api/issues"
+  },
+  "homepage": "https://github.com/tjwudi/hexo-generator-api",
+  "dependencies": {
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {}
+}
