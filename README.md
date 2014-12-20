@@ -64,7 +64,7 @@ A list of the most recent posts of the blog. Generated in `public/api/list`. The
 
 The api end point will be to `public/api/list/recent.json`.
 
-An example list page will be the same as above, but in the reverse order they were published *oldest to newest*
+An example list page will be the same as above, but in the reverse order they were published *newest to oldest*
 
 ```json
 {
