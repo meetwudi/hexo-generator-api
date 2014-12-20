@@ -52,8 +52,28 @@ function makePost(post, inList) {
     result.url = postUrl(post);
   }
   else {
+    // Set up new variables
+    var postRaw = post.raw,
+        postBody
+
+    // Split post at front matter seperator '---'
+    postRaw = postRaw.split('---')
+
+    // Set body post to second part of array, first part being only front matter
+    postBody = postRaw[1]
+
+    // Incase user has used the front matter trigger anywhere else in the post
+    // recombine the rest of postRaw with postBody, still ignoring the front matter
+    if (postRaw.length > 1) {
+      for (i = 2; i < postRaw.length; i++) {
+        // We have to append the seperator '---' before recombining since it will be
+        // removed in the split
+        postBody += '---' + postRaw[i]
+      }
+    }
+
     //post detail
-    result.raw = post.raw;
+    result.raw = postBody;
   }
   return result;
 }
