@@ -59,6 +59,44 @@ An example list page will be
 }
 ```
 
+##### Recent
+A list of the most recent posts of the blog. Generated in `public/api/list`. The number of recent posts is defined by default paginated. You can set the number of posts via the `api_posts_per_page` setting.
+
+The api end point will be to `public/api/list/recent.json`.
+
+An example list page will be the same as above, but in the reverse order they were published *newest to oldest*
+
+```json
+{
+    "posts": [{
+        "title": "test",
+        "permalink": "http://yoursite.com/2014/11/14/test/",
+        "date": 1415929904000,
+        "url": "http://yoursite.com/api/posts/51lslnjeqrtdxf3k.json"
+    }, {
+        "title": "test",
+        "permalink": "http://yoursite.com/2014/11/14/test-3/",
+        "date": 1415929903000,
+        "url": "http://yoursite.com/api/posts/7qdz6o08kjizb7zs.json"
+    }, {
+        "title": "test",
+        "permalink": "http://yoursite.com/2014/11/14/test-4/",
+        "date": 1415929902000,
+        "url": "http://yoursite.com/api/posts/3hevgb4ty7txp68c.json"
+    }, {
+        "title": "test",
+        "permalink": "http://yoursite.com/2014/11/14/test-5/",
+        "date": 1415929901000,
+        "url": "http://yoursite.com/api/posts/1jmthulquk4e9sum.json"
+    }, {
+        "title": "test",
+        "permalink": "http://yoursite.com/2014/11/14/test-6/",
+        "date": 1415928246000,
+        "url": "http://yoursite.com/api/posts/e20vj4gx5pcd14s3.json"
+    }]
+}
+```
+
 ##### Post
 Every post will have a single JSON file to hold the result located in `public/api/posts`.
 
