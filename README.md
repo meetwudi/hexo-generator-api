@@ -7,16 +7,6 @@ Generate json api for your awesome hexo site
 ```
 $ npm install hexo-generator-api --save
 ```
-
-
-
-
-
-
-
-
-
-
 ### API Generation
 
 ##### List
@@ -98,9 +88,10 @@ An example list page will be the same as above, but in the reverse order they we
 ```
 
 ##### Post
-Every post will have a single JSON file to hold the result located in `public/api/posts`.
+Every post will have a single JSON file to hold the result located in `public/api/posts`. Choose the raw or the rendered content.
 
-An example post will be
+An example post option will be  
+`api_raw: true`
 
 ```json
 {
@@ -111,13 +102,16 @@ An example post will be
 }
 ```
 
-For real world example, here are some of them:
+`api_raw: false`
 
-- [Sample list api](http://blog.leapoahead.com/api/list/list.json)
-- [Sample post api](http://blog.leapoahead.com/api/posts/e5e19bowadlm6rh3.json)
-
-
-
+```json
+{
+    "title": "test",
+    "permalink": "http://yoursite.com/2014/11/14/test-4/",
+    "date": 1415929902000,
+    "content": "title: test\ndate: 2014-11-14 09:51:42\ntags:\n---\n This is a very good post."
+}
+```
 
 
 ### Options
@@ -126,6 +120,8 @@ Set options in `_config.yml`.
 ```yml
 # Posts displayed per page in list
 api_posts_per_page: 5
+# Raw or Rendered Post in json
+api_raw: false
 ```
 
 

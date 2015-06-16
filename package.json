@@ -1,6 +1,6 @@
 {
   "name": "hexo-generator-api",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Generate JSON api for your awesome hexo site",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://git.research.nxfifteen.me.uk/mean/hexo-generator-api",
   "dependencies": {
-    "underscore": "^1.7.0"
+    "underscore": "^1.8.2"
   },
   "devDependencies": {}
 }
