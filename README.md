@@ -1,5 +1,7 @@
 # hexo-generator-api
 
+[![npm version][npm-badge]][npm-url]
+
 Generate json api for your awesome hexo site
 
 ### Installation
@@ -7,14 +9,6 @@ Generate json api for your awesome hexo site
 ```
 $ npm install hexo-generator-api --save
 ```
-
-
-
-
-
-
-
-
 
 
 ### API Generation
@@ -116,10 +110,6 @@ For real world example, here are some of them:
 - [Sample list api](http://blog.leapoahead.com/api/list/list.json)
 - [Sample post api](http://blog.leapoahead.com/api/posts/e5e19bowadlm6rh3.json)
 
-
-
-
-
 ### Options
 Set options in `_config.yml`.
 
@@ -127,9 +117,6 @@ Set options in `_config.yml`.
 # Posts displayed per page in list
 api_posts_per_page: 5
 ```
-
-
-
 
 ### Contribute
 
@@ -139,8 +126,8 @@ Your contributions will be welcomed! Just :
 - submit issue
 - propose pull request
 
-
-
-
 ### LICENSE
 MIT
+
+[npm-badge]: https://badge.fury.io/js/hexo-generator-api.svg
+[npm-url]: https://badge.fury.io/js/hexo-generator-api
