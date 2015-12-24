@@ -4,7 +4,7 @@
   "description": "Generate JSON api for your awesome hexo site",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "lab"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,9 @@
   "dependencies": {
     "underscore": "^1.7.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "code": "^2.0.1",
+    "hexo": "^3.1.1",
+    "lab": "^8.0.0"
+  }
 }

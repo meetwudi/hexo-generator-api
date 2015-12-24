@@ -1,7 +1,5 @@
 var path = require('path'),
   _ = require('underscore'),
-  Hexo = require('hexo'),
-  hexo = new Hexo(process.cwd(), {}),
   url = require('url');
 
 var baseUrl = '/api';
