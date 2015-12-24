@@ -26,9 +26,9 @@
     "lodash": "^3.10.1"
   },
   "devDependencies": {
-    "code": "^2.0.1",
+    "code": "^1.5.0",
     "coveralls": "^2.11.6",
     "hexo": "^3.1.1",
-    "lab": "^8.0.0"
+    "lab": "^2.6.0"
   }
 }
