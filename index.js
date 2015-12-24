@@ -1,5 +1,5 @@
 var path = require('path'),
-  _ = require('underscore'),
+  _ = require('lodash'),
   url = require('url');
 
 var baseUrl = '/api';
@@ -88,7 +88,7 @@ function generateList(allPosts) {
     curPosts;
 
   while (startIdx(apiPage, postsPerPage) < allPosts.length) {
-    curPosts = _.filter(allPosts, function(post, idx) { 
+    curPosts = _.filter(allPosts, function(post, idx) {
       // pagination
       return startIdx(apiPage, postsPerPage) <= idx && endIdx(apiPage, postsPerPage) > idx;
     });
@@ -99,7 +99,7 @@ function generateList(allPosts) {
     result.posts = _.map(curPosts, function(post) {
       return makePost(post, true);
     });
-    // check for prev page 
+    // check for prev page
     if (apiPage > 1) {
       result.prev = listUrl(apiPage - 1);
     }

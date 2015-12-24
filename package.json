@@ -23,7 +23,7 @@
   },
   "homepage": "https://git.research.nxfifteen.me.uk/mean/hexo-generator-api",
   "dependencies": {
-    "underscore": "^1.7.0"
+    "lodash": "^3.10.1"
   },
   "devDependencies": {
     "code": "^2.0.1",
