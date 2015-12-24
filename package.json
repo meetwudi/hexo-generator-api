@@ -4,8 +4,8 @@
   "description": "Generate JSON api for your awesome hexo site",
   "main": "index.js",
   "scripts": {
-    "test": "lab",
-    "coverage": "lab -s -r lcov | coveralls"
+    "test": "lab -I hexo",
+    "coverage": "lab -s -I hexo -r lcov | coveralls"
   },
   "repository": {
     "type": "git",
