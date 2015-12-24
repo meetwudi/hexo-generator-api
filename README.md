@@ -4,7 +4,6 @@
 [![Build Status][travis-badge]][travis-url]
 [![Coverage Status][coveralls-badge]][coveralls-url]
 [![Dependency Status][david-badge]][david-url]
-[![Gitter chat][gitter-badge]][gitter-url]
 
 Generate json api for your awesome hexo site
 
@@ -141,5 +140,3 @@ MIT
 [coveralls-url]: https://coveralls.io/github/tjwudi/hexo-generator-api?branch=master
 [david-badge]: https://david-dm.org/tjwudi/hexo-generator-api.svg
 [david-url]: https://david-dm.org/tjwudi/hexo-generator-api
-[gitter-badge]: https://badges.gitter.im/tjwudi/hexo-generator-api.svg
-[gitter-url]: https://gitter.im/tjwudi/hexo-generator-api
