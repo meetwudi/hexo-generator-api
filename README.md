@@ -1,6 +1,10 @@
 # hexo-generator-api
 
 [![npm version][npm-badge]][npm-url]
+[![Build Status][travis-badge]][travis-url]
+[![Coverage Status][coveralls-badge]][coveralls-url]
+[![Dependency Status][david-badge]][david-url]
+[![Gitter chat][gitter-badge]][gitter-url]
 
 Generate json api for your awesome hexo site
 
@@ -131,3 +135,11 @@ MIT
 
 [npm-badge]: https://badge.fury.io/js/hexo-generator-api.svg
 [npm-url]: https://badge.fury.io/js/hexo-generator-api
+[travis-badge]: https://api.travis-ci.org/tjwudi/hexo-generator-api.svg
+[travis-url]: https://travis-ci.org/tjwudi/hexo-generator-api
+[coveralls-badge]:https://coveralls.io/repos/tjwudi/hexo-generator-api/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/github/tjwudi/hexo-generator-api?branch=master
+[david-badge]: https://david-dm.org/tjwudi/hexo-generator-api.svg
+[david-url]: https://david-dm.org/tjwudi/hexo-generator-api
+[gitter-badge]: https://badges.gitter.im/tjwudi/hexo-generator-api.svg
+[gitter-url]: https://gitter.im/tjwudi/hexo-generator-api
