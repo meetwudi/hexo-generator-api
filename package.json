@@ -1,16 +1,13 @@
 {
   "name": "hexo-generator-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate JSON api for your awesome hexo site",
   "main": "index.js",
   "scripts": {
     "test": "lab -I hexo",
     "coverage": "lab -s -I hexo -r lcov | coveralls"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@git.research.nxfifteen.me.uk:mean/hexo-generator-api.git"
-  },
+  "repository": "https://github.com/tjwudi/hexo-generator-api.git",
   "keywords": [
     "hexo",
     "api",
@@ -19,9 +16,9 @@
   "author": "John Wu <webmaster@leapoahead.com> (https://github.com/tjwudi)",
   "license": "MIT",
   "bugs": {
-    "url": "https://git.research.nxfifteen.me.uk/mean/hexo-generator-api/issues"
+    "url": "https://github.com/tjwudi/hexo-generator-api/issues"
   },
-  "homepage": "https://git.research.nxfifteen.me.uk/mean/hexo-generator-api",
+  "homepage": "https://github.com/tjwudi/hexo-generator-api",
   "dependencies": {
     "lodash": "^3.10.1"
   },
