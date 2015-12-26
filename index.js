@@ -1,9 +1,10 @@
 var path = require('path'),
-  _ = require('underscore'),
+  _ = require('lodash'),
   url = require('url');
 
-var baseUrl = '/api',
-  allPosts;
+var baseUrl = '/api';
+
+hexo.extend.generator.register('api', apiGenerator);
 
 // Utilities
 function listName(apiPage) {
@@ -54,13 +55,13 @@ function makePost(post, inList) {
   else {
     // Set up new variables
     var postRaw = post.raw,
-        postBody
+        postBody;
 
     // Split post at front matter seperator '---'
-    postRaw = postRaw.split('---')
+    postRaw = postRaw.split('---');
 
     // Set body post to second part of array, first part being only front matter
-    postBody = postRaw[1]
+    postBody = postRaw[1];
 
     // Incase user has used the front matter trigger anywhere else in the post
     // recombine the rest of postRaw with postBody, still ignoring the front matter
@@ -79,16 +80,15 @@ function makePost(post, inList) {
 }
 
 
-
-
-function generateList(locals) {
+function generateList(allPosts) {
   // list generation
   // get all posts
-  var postsPerPage = hexo.config['api_posts_per_page'] || 10,
-    apiPage = 1,
+  var postsPerPage = hexo.config.api_posts_per_page || 10,
+    apiPage = 1, allRoutes = [],
     curPosts;
+
   while (startIdx(apiPage, postsPerPage) < allPosts.length) {
-    curPosts = _.filter(allPosts, function(post, idx) { 
+    curPosts = _.filter(allPosts, function(post, idx) {
       // pagination
       return startIdx(apiPage, postsPerPage) <= idx && endIdx(apiPage, postsPerPage) > idx;
     });
@@ -99,7 +99,7 @@ function generateList(locals) {
     result.posts = _.map(curPosts, function(post) {
       return makePost(post, true);
     });
-    // check for prev page 
+    // check for prev page
     if (apiPage > 1) {
       result.prev = listUrl(apiPage - 1);
     }
@@ -107,22 +107,23 @@ function generateList(locals) {
     if (startIdx(apiPage + 1, postsPerPage) < allPosts.length) {
       result.next = listUrl(apiPage + 1);
     }
-    // write to file
-    hexo.route.set(listPath(apiPage), JSON.stringify(result));
+
+    allRoutes.push({ path: listPath(apiPage), data: JSON.stringify(result) });
     apiPage ++;
   }
+  return allRoutes;
 }
 
-function generatePosts(locals) {
-  _.each(allPosts, function(post) {
+function generatePosts(allPosts) {
+  return _.collect(allPosts, function(post) {
     var result = makePost(post, false);
-    hexo.route.set(postPath(post), JSON.stringify(result));
+    return { path: postPath(post), data: JSON.stringify(result)};
   });
 }
 
-function generateRecent(locals) {
+function generateRecent(allPosts) {
   var postsPerPage = hexo.config['api_posts_per_page'] || 10,
-      recentPosts = []
+      recentPosts = [];
 
   // Loop thru the first 'postsPerPage' posts, in reverse order
   for (var i = allPosts.length; i-- > (allPosts.length - postsPerPage); ) {
@@ -135,14 +136,13 @@ function generateRecent(locals) {
     return makePost(post, true);
   });
 
-  // Convert object into JSON file
-  hexo.route.set(recentPath(), JSON.stringify(result));
+  return { path: recentPath(), data: JSON.stringify(result) };
 }
 
-hexo.extend.generator.register('api', function(locals, render, callback) {
+function apiGenerator(locals) {
   allPosts = locals.posts.toArray();
-  generateRecent(locals); // Create API file for most recent posts
-  generateList(locals);
-  generatePosts(locals)
-  callback();
-});
+  return _.flatten([
+    generateRecent(allPosts), // Create API file for most recent posts
+    generateList(allPosts),
+    generatePosts(allPosts)]);
+}
